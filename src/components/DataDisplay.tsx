@@ -38,13 +38,21 @@ const DataDisplay = (props: { match: { params: DataParams; }; }) => {
             <p><b>Country: </b>{(countries.find((country) => country[1] === countryCode) || ["", ""])[0]}</p>
             <p> 
                 <b>Time span: </b>
-                <Moment format="DD MMMM YYYY" className={"d-inline"}>{startDate}</Moment> 
+                <Moment format="D MMMM YYYY" className={"d-inline"}>{startDate}</Moment> 
                 &nbsp;-&nbsp;
-                <Moment format="DD MMMM YYYY" className={"d-inline"}>{endDate}</Moment> 
+                <Moment format="D MMMM YYYY" className={"d-inline"}>{endDate}</Moment> 
             </p>
             <Row>
                 <Col>
-                    { covidData ? <Chart data={covidData} /> : null }
+                    { covidData ? 
+                        <Chart data={covidData.map(elem => {
+                            return {
+                                ...elem, 
+                                date: moment(new Date(elem.date)).format("MMMM D")
+                            } 
+                        })} /> 
+                    : null }
+                
                 </Col>
             </Row>
         </Container>
