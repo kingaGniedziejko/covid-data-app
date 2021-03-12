@@ -56,13 +56,13 @@ const DataDisplay = (props: { match: { params: DataParams; }; }) => {
         <>
             <Row>
                 <Col className="text-center mb-4">
-                    <p> 
+                    <p className="mb-1"> 
                         <b>Time span: </b>
                         <Moment format="D MMMM YYYY" className={"d-inline"}>{startDate}</Moment> 
                         &nbsp;-&nbsp;
                         <Moment format="D MMMM YYYY" className={"d-inline"}>{endDate}</Moment> 
                     </p>
-                    <p className="mb-1"><b>Country: </b>{(countries.find((country) => country[1] === countryCode) || ["", ""])[0]}</p>
+                    <p><b>Country: </b>{(countries.find((country) => country[1] === countryCode) || ["", ""])[0]}</p>
                 </Col>
             </Row>
             <Row className="justify-content-center align-items-center">
