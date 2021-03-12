@@ -1,22 +1,16 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Moment from 'react-moment';
 
 import { covidapi } from '../apis/covidapi';
 import countries from '../data/countries';
+import Chart from './Chart';
 
 type DataParams = {
     date: string;
     countryCode: string;
 } 
-
-type CovidDataType = Array<{
-    confirmed: number;
-    date: string;
-    deaths: number;
-    recovered: number;
-}> 
 
 const DataDisplay = (props: { match: { params: DataParams; }; }) => {
     const {date, countryCode} = props.match.params;
@@ -48,6 +42,11 @@ const DataDisplay = (props: { match: { params: DataParams; }; }) => {
                 &nbsp;-&nbsp;
                 <Moment format="DD MMMM YYYY" className={"d-inline"}>{endDate}</Moment> 
             </p>
+            <Row>
+                <Col>
+                    { covidData ? <Chart data={covidData} /> : null }
+                </Col>
+            </Row>
         </Container>
     )
 }
