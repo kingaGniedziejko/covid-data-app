@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path={"/"} component={DataForm}/>
-          <Route exact path={"/display/:date/:country"} component={DataDisplay}/>
+          <Route exact path={"/display/:date/:countryCode"} component={DataDisplay}/>
         </Switch>
       </BrowserRouter>
     </div>

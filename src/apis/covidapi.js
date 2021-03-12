@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export default covidapi = axios.create({
+export const covidapi = axios.create({
     baseURL: 'https://covidapi.info/api/v1'
 });
