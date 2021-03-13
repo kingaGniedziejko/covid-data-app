@@ -7,26 +7,8 @@ type ChartProps = {
 }
 
 class Chart extends React.Component<ChartProps> {
-    // state = {
-    //     windowWidth: window.innerWidth
-    // }
-
-    // handleResize = () => {
-    //     this.setState({ windowWidth: window.innerWidth });
-    // };
-      
-    // componentDidMount() {
-    //     // addEventListener("resize", this.handleResize);
-    // }
-       
-    // componentWillUnmount() {
-    //     window.addEventListener("resize", this.handleResize);
-    // } 
-      
-
     render() {
         const {data, width} = this.props;
-        // const {windowWidth} = this.state;
 
         return (
             <LineChart width={width} height={width/1.5} data={data}>

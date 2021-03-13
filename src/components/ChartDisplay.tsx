@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import moment from 'moment';
 import { Button, Col, Row } from 'react-bootstrap';
 import Chart from './Chart';
