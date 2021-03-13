@@ -1,25 +1,21 @@
 import React from 'react';
-import {Route, Switch, BrowserRouter} from 'react-router-dom';
-import DataDisplay from './components/DataDisplay';
-import DataForm from './components/DataForm';
+import { BrowserRouter } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import './style/style.css'
+
+import Header from './components/Header';
+import Content from './components/Content';
+
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Container className="py-4">
-          <Row>
-            <Col className="text-center mb-4">
-              <h1>Covid Statistics</h1>
-            </Col>
-          </Row>
-          <Switch>
-            <Route exact path={"/"} component={DataForm}/>
-            <Route exact path={"/display/:date/:countryCode"} component={DataDisplay}/>
-          </Switch>
+          <Header/>
+          <Content/>
         </Container>
       </BrowserRouter>
     </div>
